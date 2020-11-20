@@ -1,6 +1,6 @@
 
 public interface MascarillasDespuesDeImpuestos {
-
-	double calcularPrecio(int numeroMascarillas, double d);
+	
+	double calcularPrecio(int numeroMascarillas, double precioMascarillas);
 	String getPais();
 }

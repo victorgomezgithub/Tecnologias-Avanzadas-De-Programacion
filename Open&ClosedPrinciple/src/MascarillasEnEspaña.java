@@ -1,7 +1,5 @@
 
 public class MascarillasEnEspaña implements MascarillasDespuesDeImpuestos{
-
-	private final String PAIS = "ESPAÑA";
 	
 	@Override
 	public double calcularPrecio(int numeroMascarillas, double precioMascarillas) {
@@ -14,7 +12,7 @@ public class MascarillasEnEspaña implements MascarillasDespuesDeImpuestos{
 
 	@Override
 	public String getPais() {
-		return PAIS;
+		return "ESPAÑA";
 	}
 
 }
