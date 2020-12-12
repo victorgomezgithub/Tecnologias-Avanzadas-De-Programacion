@@ -4,17 +4,20 @@ public class Maquina {
 
 	private Producto productoSeleccionado;
 	private Estado current;
+	private BigDecimal monedaIntroducida;
 
 	public Maquina() {
 		setProductoSeleccionado(null);
 		this.current = new ProductoNoSeleccionado();
+		monedaIntroducida = null;
 	}
 
 	public void setEstado(Estado e) {
 		this.current = e;
 	}
 
-	public void introducirMoneda() {
+	public void introducirMoneda(BigDecimal monedaIntroducida) {
+		this.monedaIntroducida = monedaIntroducida;
 		this.current.introducirMoneda(this);
 	}
 
@@ -43,8 +46,12 @@ public class Maquina {
 		this.productoSeleccionado = productoSeleccionado;
 	}
 	
-	public void pagandoProducto(BigDecimal valor) {
+	protected void pagandoProducto(BigDecimal valor) {
 		System.out.println("Falta por pagar: " + productoSeleccionado.precioAPagarMenos(valor));
+	}
+
+	public BigDecimal getMonedaIntroducida() {
+		return monedaIntroducida;
 	}
 
 }

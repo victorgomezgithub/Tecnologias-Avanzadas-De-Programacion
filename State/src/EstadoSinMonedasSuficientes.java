@@ -1,11 +1,10 @@
-import java.math.BigDecimal;
 
 public class EstadoSinMonedasSuficientes implements Estado{
 
 	@Override
 	public void introducirMoneda(Maquina m) {
 		System.out.println("Moneda introducida");
-		m.pagandoProducto(new BigDecimal(1));
+		m.pagandoProducto(m.getMonedaIntroducida());
 		if (m.getProductoSeleccionado().getPrecio().doubleValue() > 0) {
 			System.out.println("Introducir más monedas");
 		} else {
@@ -17,20 +16,34 @@ public class EstadoSinMonedasSuficientes implements Estado{
 
 	@Override
 	public void retirarMoneda(Maquina m) {
-		System.out.println("Retiramos monedas y deselccionamos producto");
+		System.out.println("Retiramos monedas y deseleccionamos producto");
 		m.setEstado(new ProductoNoSeleccionado());
 		
 	}
 
+
+
 	@Override
-	public void seleccionarProducto(Maquina m) {
+	public void recogerProducto(Maquina m) {
+		System.out.println("No hay nada que recoger...");
+		
+	}
+
+	@Override
+	public void seleccionarProductoNueces(Maquina m) {
 		System.out.println("Producto ya seleccionado!");
 		
 	}
 
 	@Override
-	public void recogerProducto(Maquina m) {
-		System.out.println("No hay nada que recoger...");
+	public void seleccionarProductoFintaDeNaranja(Maquina m) {
+		System.out.println("Producto ya seleccionado!");
+		
+	}
+
+	@Override
+	public void seleccionarProductoDuritos(Maquina m) {
+		System.out.println("Producto ya seleccionado!");
 		
 	}
 
