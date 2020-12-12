@@ -7,14 +7,12 @@ public abstract class Middleware {
         return next;
     }
 
-    public abstract boolean check(String usuario, String password);
+    public abstract boolean check(String usuario, String password, String accion);
     
-    public abstract boolean accion(String usuario);
-
-    protected boolean checkNext(String usuario, String password) {
+    protected boolean checkNext(String usuario, String password, String accion) {
         if (next == null) {
             return true;
         }
-        return next.check(usuario, password);
+        return next.check(usuario, password, accion);
     }
 }

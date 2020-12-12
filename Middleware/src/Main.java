@@ -8,19 +8,14 @@ public class Main {
 		
 		Middleware middleware = new CheckAttempts();
 		
-		middleware.linkWith(new CheckAuthentification());
+		middleware.linkWith(new CheckAuthentification()).linkWith(new CheckLevel());
+		
 		
 		Server server = new Server(middleware);
 		
-		server.logIn("Joe", "134");
-		server.logIn("Joe", "134");
-		server.logIn("Joe", "134");
-
-		if (server.logIn("Joe", "1234"))
-			System.out.println("Estamos dentro");
-		
-		else
-			System.out.println("Estamos fuera");
+		server.requestAction("Jo", "1234", "SELECT");
+		server.requestAction("Joe", "1234", "UPDATE");
+		server.requestAction("Joe", "123", "SELECT");
 		
 	}
 

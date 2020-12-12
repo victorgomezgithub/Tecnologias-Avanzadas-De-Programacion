@@ -2,27 +2,16 @@
 public class CheckAuthentification extends Middleware{
 
 	@Override
-	public boolean check(String usuario, String password) {
+	public boolean check(String usuario, String password,String accion) {
 		
 		if (AlmacenUsuarios.checkUser(usuario))
 		{
 			if (AlmacenUsuarios.checkPassword(usuario,password))
 			{
-				return checkNext(usuario, password);
+				return checkNext(usuario, password, accion);
 			}
-			
-			System.out.println("Contraseña Inconrrecta");
-		} else {
-			System.out.println("Usuario Inconrrecto");
 		}
 		
-		
-		return false;
-	}
-
-	@Override
-	public boolean accion(String usuario) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

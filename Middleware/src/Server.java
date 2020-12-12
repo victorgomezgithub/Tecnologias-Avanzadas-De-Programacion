@@ -14,25 +14,13 @@ public class Server {
         this.middleware = middleware;
     }
 
-    public boolean logIn(String usuario, String password) {
-        if (middleware.check(usuario, password))
-        {	
-        	AlmacenUsuarios.booleanUpdateLogin(usuario);
-        	return true;
-        }
-        return false;
-    }
-    
-    public boolean unlockUser(String usuario, String password) {
-        if (middleware.accion(usuario))
+    public boolean requestAction(String usuario, String password, String accion) {
+        if (middleware.check(usuario, password,accion))
         {	
         	return true;
         }
         return false;
     }
     
-    public boolean desbloquearUsuario() {
-    	return false;
-    }
     
 }

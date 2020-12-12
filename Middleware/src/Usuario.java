@@ -4,7 +4,6 @@ public abstract class Usuario {
 	private String userName;
 	private String password;
 	private int attempts;
-	private boolean loginUsuario = false;
 	
 	public String getUsername() {
 		return this.userName;
@@ -28,14 +27,6 @@ public abstract class Usuario {
 	
 	public void setAttempts(int attempts) {
 		this.attempts = attempts;
-	}
-	
-	public void setLoginUsuario(boolean estado) {
-		this.loginUsuario = estado;
-	}
-	
-	public boolean getLoginUsuario() {
-		return loginUsuario;
 	}
 	
 	

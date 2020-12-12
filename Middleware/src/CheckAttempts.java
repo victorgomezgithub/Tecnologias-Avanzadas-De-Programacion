@@ -2,19 +2,12 @@
 public class CheckAttempts extends Middleware{
 
 	@Override
-	public boolean check(String usuario, String password) {
+	public boolean check(String usuario, String password, String accion) {
 		if (AlmacenUsuarios.checkAttempts(usuario))
-			return checkNext(usuario, password);
+			return checkNext(usuario, password, accion);
 		
-			System.out.println("Demasiados Intentos, usuario bloqueado");
 			return false;
 		
-	}
-
-	@Override
-	public boolean accion(String usuario) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }
