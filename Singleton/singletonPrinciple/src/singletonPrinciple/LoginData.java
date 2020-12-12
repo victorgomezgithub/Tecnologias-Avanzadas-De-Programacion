@@ -19,7 +19,7 @@ public class LoginData {
 		return myLog;
 	}
 	
-	public LoginData() {
+	private LoginData() {
 		
 	}
 	
