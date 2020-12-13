@@ -47,7 +47,7 @@ public class Maquina {
 	}
 	
 	protected void pagandoProducto(BigDecimal valor) {
-		System.out.println("Falta por pagar: " + productoSeleccionado.precioAPagarMenos(valor));
+		System.out.println("Falta por pagar: " + productoSeleccionado.precioAPagarMenos(valor).floatValue());
 	}
 
 	public BigDecimal getMonedaIntroducida() {

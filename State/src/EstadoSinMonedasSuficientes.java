@@ -8,6 +8,7 @@ public class EstadoSinMonedasSuficientes implements Estado{
 		if (m.getProductoSeleccionado().getPrecio().doubleValue() > 0) {
 			System.out.println("Introducir más monedas");
 		} else {
+			System.out.println("Todo pagado, no hay devoluciones");
 			m.setEstado(new EstadoEntregaProducto());
 		}
 		
