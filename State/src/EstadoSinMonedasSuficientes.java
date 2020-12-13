@@ -17,7 +17,7 @@ public class EstadoSinMonedasSuficientes implements Estado{
 	@Override
 	public void retirarMoneda(Maquina m) {
 		System.out.println("Retiramos monedas y deseleccionamos producto");
-		m.setEstado(new ProductoNoSeleccionado());
+		m.setEstado(new EstadoProductoNoSeleccionado());
 		
 	}
 

@@ -8,7 +8,7 @@ public class Maquina {
 
 	public Maquina() {
 		setProductoSeleccionado(null);
-		this.current = new ProductoNoSeleccionado();
+		this.current = new EstadoProductoNoSeleccionado();
 		monedaIntroducida = null;
 	}
 

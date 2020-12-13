@@ -14,7 +14,7 @@ public class EstadoEntregaProducto implements Estado{
 	@Override
 	public void recogerProducto(Maquina m) {
 		System.out.println("¡Producto entregado!");
-		m.setEstado(new ProductoNoSeleccionado());
+		m.setEstado(new EstadoProductoNoSeleccionado());
 	}
 
 	@Override

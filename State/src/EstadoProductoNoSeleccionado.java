@@ -1,5 +1,5 @@
 
-public class ProductoNoSeleccionado implements Estado {
+public class EstadoProductoNoSeleccionado implements Estado {
 
 	@Override
 	public void introducirMoneda(Maquina m) {
